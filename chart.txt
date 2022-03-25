@@ -1,0 +1,22 @@
+
+npm install chart.js@2.9.3 --save
+
+
+
+
+npm install ng2-charts@2.2.3 --save
+
+
+npm install firebase@8.6.5 @angular/fire@6.1.5
+
+"strictPropertyInitialization": false,
+"noImplicitAny": false,
+
+npm i --save-dev @types/chart.js
+
+
+
+google sheet:chạy bằng pycharm để cật nhật mỗi 1s dữ liệu lên sheet của lehoangtan1604@gmail
+
+listen_firebase2.py : chạy bằng visual code để cập nhật mỗi khi có cảnh báo quá nhiệt, ko đeo
+khẩu trang vào firebase, 20 mẫu cho mỗi loại

@@ -1,0 +1,72 @@
+<div class="main-content">
+    <div class="container-fluid">
+        
+        <div class="row">
+            <div class="col-lg-6 col-md-12">
+                
+                <app-chart1></app-chart1>
+                
+            </div>
+            <div class="col-lg-6 col-md-12" >
+                <figure [ngSwitch]="mask">
+                    <figcaption>Phát hiện người không đeo khấu trang</figcaption>
+                    <img *ngSwitchCase=1 style="width: 100%; height: 540px;" [src]="urlink()" alt="">
+                    <img *ngSwitchCase=0 style="width: 100%; height: 540px;" src="https://firebasestorage.googleapis.com/v0/b/scadanhom6.appspot.com/o/5k.jpg?alt=media&token=bcb33789-3479-44d6-ab6d-e8b86485e684" alt="">
+                </figure>
+                
+                <button mat-raised-button color="warn" style="width: 100%;" (click)="resetmask()"> Reset</button>
+                
+                
+                
+            </div>
+        </div>
+        <p>
+
+        </p>
+        <div class="row" >
+            <div class="col-lg-4 col-md-8">
+                <h3>
+                    Cận dưới nhiệt độ : {{mintemp3}} °C
+                </h3>
+                <mat-form-field class="example-full-width" appearance="fill" >
+                    <mat-label>Min Temp</mat-label>
+                    <input type="number" min="20" max={{maxtemp3}} matInput placeholder=" >= 20°C" [(ngModel)]="mintemp">
+                </mat-form-field>
+                <button [disabled]="check(20,mintemp,maxtemp3)" mat-raised-button color="primary" (click)="writemin()" >Đồng ý</button>
+                
+            
+            
+            </div>
+            <div class="col-lg-4 col-md-8">
+                <h3>
+                    Cận trên nhiệt độ : {{maxtemp3}} °C
+                </h3>
+                <mat-form-field class="example-full-width" appearance="fill" >
+                    <mat-label>Max Temp</mat-label>
+                    <input type="number" min={{mintemp3}} max="60" matInput placeholder=" <= 60°C" [(ngModel)]="maxtemp">
+                </mat-form-field>
+                <button [disabled]="check(mintemp3,maxtemp,60)" mat-raised-button color="primary" (click)="writemax()">Đồng ý</button>
+                
+            
+            
+            </div>
+
+            <div class="col-lg-4 col-md-8" [ngSwitch]="temp3pos">
+            
+            <img src="\assets\img\0.png" *ngSwitchCase=0>
+            <img src="\assets\img\1.png" *ngSwitchCase=1>
+            <img src="\assets\img\2.png" *ngSwitchCase=2>
+            <br>
+            <button mat-raised-button color="primary" (click)="reset()">reset </button>
+            </div>
+            
+            
+        </div>
+
+        
+         <!-- <div class="row">
+            <h1> Nội dung 2 </h1>
+         </div> -->
+    </div>
+  </div>
+  
